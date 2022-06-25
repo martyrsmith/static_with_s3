@@ -1,0 +1,90 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.green {
+    color: green;
+}
+.nav-items {
+    list-style: none;
+    display: flex;
+}
+
+.nav-items > li {
+    padding: 10px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: pink;
+    height: 60px;
+    padding: 10px 25px;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+}
+
+.nav--link {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 31px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+
+}
+
+.nav--link:hover  {
+    background-color: deeppink;
+}
+
+.logo-image {
+   width: 60px;
+}
+
+.logo-image:hover {
+    animation: rotation 8s infinite linear;
+}
+
+.footer {
+    position: static;
+    bottom: 5px;
+    height: 20px;
+   padding: 5px;
+}
+
+.main {
+    padding: 20px;
+    text-align: center;
+}
+
+.main--photo {
+    max-width: 400px;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+.card{
+    width: 170px;
+    font-size: 12px;
+}
+.card--image {
+    width:100%;
+    border-radius: 9px;
+}
+
+.card--stats{
+    display: flex;
+    align-items: center;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
