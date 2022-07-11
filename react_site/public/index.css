@@ -7,6 +7,11 @@ html, body {
 .green {
     color: green;
 }
+
+section {
+    padding: 20px;
+}
+
 .nav-items {
     list-style: none;
     display: flex;
@@ -66,9 +71,20 @@ html, body {
     filter: alpha(opacity=80);
 }
 
+.cards-list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+}
+
+
 .card{
     width: 170px;
     font-size: 12px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 .card--image {
     width:100%;
@@ -79,6 +95,16 @@ html, body {
     display: flex;
     align-items: center;
 }
+
+.card--title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card--price {
+    margin-top: auto;
+}
+
 
 @keyframes rotation {
     from {

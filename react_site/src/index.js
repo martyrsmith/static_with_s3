@@ -20,7 +20,7 @@ function App() {
         <div className="background">
             < Header/>
             < MainContent/>
-            <div>{myItemsForSale}</div>
+            <section className="cards-list">{myItemsForSale}</section>
             {/*< Footer />*/}
         </div>
     )
