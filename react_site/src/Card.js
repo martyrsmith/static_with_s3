@@ -1,12 +1,13 @@
-export default function Card(){
+export default function Card(props){
+
     return(
         <div className="card">
-            <img src="rolls.jpeg" className="card--image" alt="item for sale"/>
+            <img src={props.itemImage} className="card--image" alt="item for sale"/>
             <div className="card--stats" >
-                <span className="green">$5</span>
-                <span> (180 cal)</span>
+                <span className="green">${props.itemPrice}</span>
+                <span> ({props.itemCalories} cal)</span>
             </div>
-            <p>Cinnamon rolls, hot and fresh.</p>
+            <p>{props.itemDescription}</p>
         </div>
     )
 }

@@ -2,18 +2,28 @@ import React from "react"
 import * as ReactDom from "react-dom"
 import Header from "./Header"
 import MainContent from "./MainContent"
-import Footer from "./Footer"
 import Card from "./Card";
+import saleItems from "./saleItems"
 
+function App() {
 
-function App(){
+    const myItemsForSale = saleItems.map(food => {
+        return < Card
+            itemImage={food.image}
+            itemPrice={food.price}
+            itemCalories={food.calories}
+            itemDescription={food.description}
+        />
+    })
+
     return (
         <div className="background">
-            < Header />
-            < MainContent />
-            < Card />
+            < Header/>
+            < MainContent/>
+            <div>{myItemsForSale}</div>
             {/*< Footer />*/}
         </div>
     )
 }
-ReactDom.render(<App />, document.getElementById("root"))
+
+ReactDom.render(<App/>, document.getElementById("root"))
