@@ -9,10 +9,8 @@ function App() {
 
     const myItemsForSale = saleItems.map(food => {
         return < Card
-            itemImage={food.image}
-            itemPrice={food.price}
-            itemCalories={food.calories}
-            itemDescription={food.description}
+            key={food.id}
+            data={food}
         />
     })
 
@@ -21,7 +19,6 @@ function App() {
             < Header/>
             < MainContent/>
             <section className="cards-list">{myItemsForSale}</section>
-            {/*< Footer />*/}
         </div>
     )
 }

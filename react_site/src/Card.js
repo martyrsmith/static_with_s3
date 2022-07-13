@@ -1,13 +1,20 @@
-export default function Card(props){
+export default function Card(props) {
+    let badgeText
 
-    return(
+    if (props.data.count === 0) {
+        badgeText = "SOLD OUT"
+    } else if (props.data.source === "imported") {
+        badgeText = "IMPORTED"
+    }
+    return (
         <div className="card">
-            <img src={props.itemImage} className="card--image" alt="item for sale"/>
-            <div className="card--stats" >
-                <span className="green">${props.itemPrice}</span>
-                <span> ({props.itemCalories} cal)</span>
+            {badgeText && <div className="card--badge">{badgeText}</div>}
+            <img src={props.data.image} className="card--image" alt="item for sale"/>
+            <div className="card--stats">
+                <span className="green">${props.data.price}</span>
+                <span> ({props.data.calories} cal)</span>
             </div>
-            <p>{props.itemDescription}</p>
+            <p>{props.data.description}</p>
         </div>
     )
 }
