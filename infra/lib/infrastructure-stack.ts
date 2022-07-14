@@ -9,15 +9,28 @@ export class InfrastructureStack extends Stack {
 
     // The code that defines your stack goes here
 
-    const websiteBucket = new Bucket(this, 'WebsiteBucket', {
+    // First React Website
+    const websiteBucket1 = new Bucket(this, 'WebsiteBucket1', {
       removalPolicy: RemovalPolicy.DESTROY,
       websiteIndexDocument: 'index.html',
       publicReadAccess: true,
     });
 
-    new BucketDeployment(this, 'DeployReactWebsite', {
+    new BucketDeployment(this, 'DeployReactWebsite1', {
       sources: [Source.asset('../react_site/build')],
-      destinationBucket: websiteBucket,
+      destinationBucket: websiteBucket1,
+    });
+
+    // Second React Website
+    const websiteBucket2 = new Bucket(this, 'WebsiteBucket2', {
+      removalPolicy: RemovalPolicy.DESTROY,
+      websiteIndexDocument: 'index.html',
+      publicReadAccess: true,
+    });
+
+    new BucketDeployment(this, 'DeployReactWebsite2', {
+      sources: [Source.asset('../react_meme/build')],
+      destinationBucket: websiteBucket2,
     });
   }
 }
