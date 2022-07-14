@@ -1,14 +1,13 @@
 import memesData from "./memesData";
-// import {useState} from "react";
+import {useState} from "react";
 
 export default function Meme() {
-    // const meme = useState("")
+    const memes = memesData.data.memes
+    const [meme, setMeme] = useState(memes[0])
 
     function handleClick(){
-        const memes = memesData.data.memes
         const randomNumber = Math.floor(Math.random() * memes.length)
-        // memes[randomNumber]
-        // console.log(memes)
+        setMeme(memes[randomNumber])
     }
 
     function handleMouseOver(){
@@ -34,7 +33,10 @@ export default function Meme() {
                 onMouseOver={handleMouseOver}>Get new meme image</button>
             </div>
 
-            {/*{meme && <img src={meme.url} alt='funny meme'/>}*/}
+            {meme && <img 
+            src={meme.url} 
+            alt='funny meme'
+            className={"meme--image"} />}
         </main>
     )
 
